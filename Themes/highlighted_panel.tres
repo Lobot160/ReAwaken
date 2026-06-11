@@ -1,0 +1,9 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://drprxaxuy0ows"]
+
+[ext_resource type="StyleBox" uid="uid://l6lq1bsyfuov" path="res://Themes/loot_choice_highlighted.tres" id="1_kvej3"]
+[ext_resource type="StyleBox" uid="uid://cduokg0vgfos" path="res://Themes/loot_choice_unhighlighted.tres" id="2_xqv5d"]
+
+[resource]
+Label/fonts/font = null
+Panel/styles/panel = ExtResource("1_kvej3")
+Panel/styles/unhighlighted = ExtResource("2_xqv5d")

@@ -1,0 +1,59 @@
+[gd_scene load_steps=5 format=3 uid="uid://nd1jjlwke5ji"]
+
+[ext_resource type="Texture2D" uid="uid://wr3ybve678lq" path="res://icon.svg" id="1_fhmjh"]
+[ext_resource type="Script" uid="uid://cx64t83l2dnp2" path="res://dialogue/dialogue.gd" id="1_qwvgg"]
+
+[sub_resource type="Gradient" id="Gradient_4r7rj"]
+colors = PackedColorArray(0.320951, 0.359849, 1, 1, 0.48869, 0.332014, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_ffo4q"]
+gradient = SubResource("Gradient_4r7rj")
+
+[node name="Talk" type="CanvasLayer"]
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+custom_minimum_size = Vector2(3, 3)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 50
+
+[node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+size_flags_vertical = 8
+texture = SubResource("GradientTexture1D_ffo4q")
+region_rect = Rect2(0, 100, 256, 100)
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/NinePatchRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/NinePatchRect/MarginContainer"]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 30
+theme_override_font_sizes/bold_font_size = 30
+theme_override_font_sizes/bold_italics_font_size = 30
+theme_override_font_sizes/italics_font_size = 30
+theme_override_font_sizes/mono_font_size = 30
+bbcode_enabled = true
+text = "[sudden]Placeholder text[/sudden]"
+fit_content = true
+scroll_active = false
+script = ExtResource("1_qwvgg")
+
+[node name="Sprite2D" type="Sprite2D" parent="MarginContainer/NinePatchRect"]
+texture = ExtResource("1_fhmjh")

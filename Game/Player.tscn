@@ -1,0 +1,49 @@
+[gd_scene load_steps=6 format=3 uid="uid://cq70xk7c8l3wt"]
+
+[ext_resource type="Script" path="res://Game/player.gd" id="1_r0px0"]
+[ext_resource type="Texture2D" uid="uid://dat6irj75mfsc" path="res://Game/Character prototype.png" id="2_bh52f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_redqf"]
+size = Vector2(20, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xyyaw"]
+size = Vector2(22, 28)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dspxn"]
+
+[node name="Player" type="CharacterBody2D"]
+position = Vector2(0, -69)
+collision_layer = 4
+floor_stop_on_slope = false
+floor_block_on_wall = false
+script = ExtResource("1_r0px0")
+metadata/_edit_lock_ = true
+
+[node name="Main Collision" type="CollisionShape2D" parent="."]
+position = Vector2(0, -15)
+shape = SubResource("RectangleShape2D_redqf")
+
+[node name="Wall Sensor" type="Area2D" parent="."]
+collision_layer = 0
+
+[node name="Polygon2D" type="CollisionShape2D" parent="Wall Sensor"]
+position = Vector2(0, -15)
+shape = SubResource("RectangleShape2D_xyyaw")
+debug_color = Color(0.116277, 0.647441, 0, 0.42)
+
+[node name="Floor Sensor" type="ShapeCast2D" parent="."]
+scale = Vector2(0.9, 1)
+shape = SubResource("RectangleShape2D_dspxn")
+target_position = Vector2(0, 36)
+margin = 1.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_bh52f")
+metadata/_edit_lock_ = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="Canvas" type="CanvasLayer" parent="."]
+
+[connection signal="body_entered" from="Wall Sensor" to="." method="_on_wall_body_entered"]

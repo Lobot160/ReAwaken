@@ -1,0 +1,98 @@
+[gd_scene load_steps=11 format=3 uid="uid://bppyw4de6cob3"]
+
+[ext_resource type="PackedScene" uid="uid://p2if7elt77hk" path="res://World/background.tscn" id="1_ksg35"]
+[ext_resource type="PackedScene" uid="uid://dyknaefs4lvek" path="res://World/world_graph.tscn" id="2_hru55"]
+[ext_resource type="Script" path="res://World/loot_randomizer.gd" id="3_7ds07"]
+[ext_resource type="PackedScene" uid="uid://c1uaka66jg4dp" path="res://Game/chest.tscn" id="3_atil0"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_gb88t"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_surd5"]
+
+[sub_resource type="Gradient" id="Gradient_ymxj6"]
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_k63t6"]
+gradient = SubResource("Gradient_ymxj6")
+width = 500
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kx0re"]
+size = Vector2(96, 96)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_gqv0l"]
+
+[node name="World" type="Node2D"]
+
+[node name="Background" parent="." instance=ExtResource("1_ksg35")]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+physics_material_override = SubResource("PhysicsMaterial_gb88t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("WorldBoundaryShape2D_surd5")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(-273.5, 360.75)
+scale = Vector2(2007, 722.5)
+texture = SubResource("GradientTexture1D_k63t6")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+physics_material_override = SubResource("PhysicsMaterial_gb88t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(163, -49.75)
+shape = SubResource("RectangleShape2D_kx0re")
+
+[node name="Polygon2D" type="Polygon2D" parent="StaticBody2D2"]
+position = Vector2(165, -45)
+scale = Vector2(2007, 205.5)
+texture = SubResource("PlaceholderTexture2D_gqv0l")
+polygon = PackedVector2Array(0.0229198, -0.262774, 0.0229198, 0.253041, -0.0239163, 0.262774, -0.0254111, -0.257908)
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+position = Vector2(168, -192)
+physics_material_override = SubResource("PhysicsMaterial_gb88t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(163, -52)
+shape = SubResource("RectangleShape2D_kx0re")
+
+[node name="Polygon2D" type="Polygon2D" parent="StaticBody2D3"]
+position = Vector2(164, -47)
+scale = Vector2(2007, 205.5)
+texture = SubResource("PlaceholderTexture2D_gqv0l")
+polygon = PackedVector2Array(0.0229198, -0.262774, 0.0229198, 0.209246, -0.0244146, 0.209246, -0.0254111, -0.257908)
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+position = Vector2(360, 1)
+physics_material_override = SubResource("PhysicsMaterial_gb88t")
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="StaticBody2D4"]
+position = Vector2(164, -45.75)
+polygon = PackedVector2Array(51, -31, 63, 43, -51, 45)
+metadata/_edit_lock_ = true
+
+[node name="Polygon2D" type="Polygon2D" parent="StaticBody2D4"]
+position = Vector2(161, -55)
+scale = Vector2(2007, 205.5)
+texture = SubResource("PlaceholderTexture2D_gqv0l")
+polygon = PackedVector2Array(0.0269058, -0.111922, 0.0333832, 0.257908, -0.0239163, 0.262774)
+metadata/_edit_lock_ = true
+
+[node name="World Graph" parent="." instance=ExtResource("2_hru55")]
+visible = false
+position = Vector2(-493, -586)
+
+[node name="Chests" type="Node2D" parent="."]
+script = ExtResource("3_7ds07")
+
+[node name="Chest" parent="Chests" instance=ExtResource("3_atil0")]
+position = Vector2(-500, -1)
+
+[node name="Chest2" parent="Chests" instance=ExtResource("3_atil0")]
+position = Vector2(-691, 5)
+
+[node name="Chest3" parent="Chests" instance=ExtResource("3_atil0")]
+position = Vector2(-899, 4)
+
+[node name="Chest4" parent="Chests" instance=ExtResource("3_atil0")]
+position = Vector2(-1055, 0)

@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://p2if7elt77hk"]
+
+[node name="Background" type="ParallaxBackground"]
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="."]
+position = Vector2(8, 2)
+motion_scale = Vector2(0, 0)
+
+[node name="Polygon2D" type="Polygon2D" parent="ParallaxLayer2"]
+position = Vector2(-1054, 31)
+scale = Vector2(8.28272, 8.07563)
+color = Color(0, 0.356963, 0.690998, 1)
+polygon = PackedVector2Array(3.62199, 178.19, 3.62199, -101.664, 75, -64, 147, -108, 176, -67, 290, -107, 398, -71, 431.984, 175.219)
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+position = Vector2(8, 2)
+motion_scale = Vector2(0.3, 0.05)
+
+[node name="Polygon2D" type="Polygon2D" parent="ParallaxLayer"]
+position = Vector2(-951, 830)
+scale = Vector2(8.28272, 8.07563)
+color = Color(0.259339, 0.614692, 0.851157, 1)
+polygon = PackedVector2Array(-252.332, 181.781, -217.441, -53.9896, -159.73, -99.0635, -44.4298, -55.7232, 3.62199, -101.664, 75, -64, 147, -108, 176, -67, 290, -107, 398, -71, 507.08, -110.703, 543.541, -64.8866, 755.549, 188.344)
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="."]
+position = Vector2(8, 2)
+motion_scale = Vector2(0.4, 0.07)
+
+[node name="Polygon2D" type="Polygon2D" parent="ParallaxLayer4"]
+position = Vector2(-958, 937)
+scale = Vector2(8.28272, 8.07563)
+color = Color(0, 0.661986, 0.686979, 1)
+polygon = PackedVector2Array(-252.332, 181.781, -217.441, -53.9896, -159.73, -99.0635, -98.5183, -50.5224, -25.354, -59.8096, -45.1542, -103.893, 39.2383, -57.5806, 186.291, -105.626, 158.764, -56.2185, 264.647, -84.4516, 335.155, -64.1436, 318.011, -105.626, 436.692, -73.0593, 482.329, -108.351, 554.648, -115.409, 515.893, -69.4682, 755.549, 188.344)
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="."]
+position = Vector2(8, 2)
+motion_scale = Vector2(0.5, 0.1)
+
+[node name="Polygon2D" type="Polygon2D" parent="ParallaxLayer3"]
+position = Vector2(-1307, 1043)
+scale = Vector2(8.28272, 8.07563)
+color = Color(0.186661, 0.80137, 0.774737, 1)
+polygon = PackedVector2Array(-224.805, 182.277, -232.532, -58.9427, -155.021, -118.381, -75.3375, -58.4474, 3.62199, -101.664, 109.143, -60.4287, 147, -108, 202.711, -75.5359, 290, -107, 345.78, -68.9729, 491.505, -110.58, 532.917, -59.3142, 606.926, -111.818, 714.258, -47.4266, 871.573, -114.914, 783.076, 181.41)
+
+[node name="ParallaxLayer5" type="ParallaxLayer" parent="."]
+position = Vector2(8, 2)
+motion_scale = Vector2(0.7, 0.15)
+
+[node name="Polygon2D" type="Polygon2D" parent="ParallaxLayer5"]
+position = Vector2(-2222, 1144)
+scale = Vector2(8.28272, 8.07563)
+color = Color(0, 0.517098, 0.288405, 1)
+polygon = PackedVector2Array(-224.805, 182.277, -232.532, -58.9427, -188.827, -104.264, -94.1719, -79.4984, 5.67447, -88.2903, 90.7914, -72.4401, 167.336, -90.1477, 272.374, -70.7065, 319.702, -92.7482, 445.264, -73.307, 505.269, -96.2154, 576.501, -72.6878, 732.73, -90.3954, 852.135, -60.924, 1004.98, -96.2154, 1108.33, 161.721)
