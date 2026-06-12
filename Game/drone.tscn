@@ -1,5 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://c6xiymjgsnyek"]
+[gd_scene load_steps=4 format=3 uid="uid://c6xiymjgsnyek"]
 
+[ext_resource type="Script" path="res://Game/drone.gd" id="1_318tv"]
 [ext_resource type="Texture2D" uid="uid://wr3ybve678lq" path="res://icon.svg" id="1_mbj3f"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bhj4w"]
@@ -7,6 +8,7 @@ radius = 8.0
 height = 26.0
 
 [node name="Drone" type="CharacterBody2D"]
+script = ExtResource("1_318tv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708

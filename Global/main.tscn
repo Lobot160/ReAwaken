@@ -17,4 +17,4 @@ position = Vector2(865, 650)
 [node name="UI" parent="." instance=ExtResource("3_7x28n")]
 
 [node name="Drone" parent="." instance=ExtResource("4_7dejl")]
-position = Vector2(794, 539)
+position = Vector2(787, 539)
