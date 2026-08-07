@@ -1,0 +1,32 @@
+{
+	"player" : 
+		{
+		"basicHealth" : {
+			"name" : "Health",
+			"cost" : 25,
+			"values" : {
+				"maxHealth" : 100,
+				"healthRegen" : 10
+			}
+		},
+		"basicSpeed" : {
+			"name" : "Speed",
+			"cost" : 25,
+			"values" : {
+				"speed" : 100,
+				"acceleration" : 10
+			}
+		},
+		"basicJump" : {
+			"name" : "Jump",
+			"cost" : 25,
+			"values" : {
+				"jumpHeight" : 100
+			}
+		}
+	},
+	"drone" : {
+		
+	}
+	
+}
