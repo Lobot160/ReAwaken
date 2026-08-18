@@ -13,15 +13,15 @@
 			"name" : "Speed",
 			"energyCost" : 25,
 			"values" : {
-				"speed" : 500,
-				"acceleration" : 1000
+				"speed" : 200,
+				"acceleration" : 400
 			}
 		},
 		"basicJump" : {
 			"name" : "Jump",
 			"energyCost" : 25,
 			"values" : {
-				"jumpPower" : 1000
+				"jumpPower" : 200
 			}
 		}
 	},

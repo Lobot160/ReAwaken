@@ -31,7 +31,6 @@ func _physics_process(delta: float) -> void:
 			print("Invalid Mode")
 	
 	move_and_slide()
-
 func manual_mode(delta: float, direction: Vector2) -> void:
 	if direction.x:
 		velocity.x = move_toward(velocity.x, SPEED * direction.x, MOVE_ACC * delta)
@@ -47,13 +46,10 @@ func manual_mode(delta: float, direction: Vector2) -> void:
 func follow_mode(delta):
 	if $NavigationAgent2D.target_position != player.global_position:
 		$NavigationAgent2D.target_position = player.global_position
-	print($NavigationAgent2D.target_position)
 	if !$NavigationAgent2D.is_target_reached():
 		var nav_point_location = to_local($NavigationAgent2D.get_next_path_position()).normalized()
 		var distance_to_target = $NavigationAgent2D.distance_to_target() + 1
-		print(nav_point_location)
 		velocity = velocity.move_toward(nav_point_location * distance_to_target * delta * SPEED, MOVE_ACC * delta)
-		print(velocity)
 	else:
 		velocity = velocity.move_toward(Vector2.ZERO, MOVE_ACC * delta)
 
