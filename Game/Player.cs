@@ -1,6 +1,8 @@
 using Godot;
+using System;
 using System.Reflection;
 using System.Text.Json;
+using static Library;
 
 public partial class Player : CharacterBody2D
 {
@@ -53,42 +55,51 @@ public partial class Player : CharacterBody2D
 
 	public override void _PhysicsProcess(double delta)
 	{
-		Vector2 velocity = Velocity;
-		Vector2 floorNormal = GetFloorNormal();
+		//Helps stick to floor
+		bool stick = true;
 
-		// Add the gravity.
-		if (!IsOnFloor())
-		{
-			floorNormal = Vector2.Up;
-		}
-		// Get the input direction and handle the movement/deceleration.
-		// As good practice, you should replace UI actions with custom gameplay actions.
-		Vector2 inputDir = new Vector2(Input.GetAxis("left", "right"), 0);
-		if (inputDir != Vector2.Zero)
-		{
-			velocity = velocity.MoveToward(inputDir.Slide(floorNormal) * speed, acceleration * (float)delta);
-		}
-		else
-		{
-			velocity.X = Mathf.MoveToward(velocity.X, 0, acceleration * (float)delta);
-		}
-		if (!IsOnFloor()) velocity += GetGravity() * (float)delta;
+		//copy of main Velocity
+		Vector2 velocity = Velocity;
 
 		
+
+		float inputDir = Input.GetAxis("left", "right");
+		velocity.X +=  inputDir * acceleration * (float)delta;
+
+		
+		if (!IsOnFloor()) 
+		{
+			velocity += GetGravity() * (float)delta;
+			stick = false;
+		}
+
+
+
 		// Handle Jump.
-		if (Input.IsActionJustPressed("jump") && IsOnFloor())
+		if (Input.IsActionJustPressed("jump") && CanJump())
 		{
 			velocity.Y = -jumpPower;
+			stick = false;
 		}
 
 		if (Input.IsActionJustPressed("debug"))
 		{
+			//Insert breakpoint here
 			GD.Print("Debug action pressed");
 		}
 
-		Velocity = velocity;
-		MoveAndSlide();
+		Velocity = velocity.Drag(0.04f, delta);
+		if (MoveAndSlide())
+		{
+			Velocity = Velocity.Ramp(GetFloorNormal());
+		}
+		
 	}
+	
 
-
+	public bool CanJump()
+	{
+		//Able to add multiple flags for jumping
+		return IsOnFloor();
+	}
 }

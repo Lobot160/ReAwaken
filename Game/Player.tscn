@@ -4,29 +4,28 @@
 [ext_resource type="Texture2D" uid="uid://dat6irj75mfsc" path="res://Game/Character prototype.png" id="2_bh52f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_redqf"]
-size = Vector2(20, 30)
+size = Vector2(20, 64)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xyyaw"]
-size = Vector2(22, 28)
+size = Vector2(22, 46)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dspxn"]
 
 [node name="Player" type="CharacterBody2D" unique_id=645467931]
 collision_layer = 4
-floor_stop_on_slope = false
-floor_block_on_wall = false
+floor_snap_length = 25.0
 script = ExtResource("1_hiq6t")
 metadata/_edit_lock_ = true
 
 [node name="Main Collision" type="CollisionShape2D" parent="." unique_id=56671157]
-position = Vector2(0, -15)
+position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_redqf")
 
 [node name="Wall Sensor" type="Area2D" parent="." unique_id=221287453]
 collision_layer = 0
 
 [node name="Polygon2D" type="CollisionShape2D" parent="Wall Sensor" unique_id=1233106934]
-position = Vector2(0, -15)
+position = Vector2(0, -6)
 shape = SubResource("RectangleShape2D_xyyaw")
 debug_color = Color(0.116277, 0.647441, 0, 0.42)
 

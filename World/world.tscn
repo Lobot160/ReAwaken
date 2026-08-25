@@ -78,6 +78,22 @@ texture = SubResource("PlaceholderTexture2D_gqv0l")
 polygon = PackedVector2Array(0.0269058, -0.111922, 0.0333832, 0.257908, -0.0239163, 0.262774)
 metadata/_edit_lock_ = true
 
+[node name="StaticBody2D5" type="StaticBody2D" parent="." unique_id=1198008879]
+position = Vector2(722, 0)
+physics_material_override = SubResource("PhysicsMaterial_gb88t")
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="StaticBody2D5" unique_id=755150673]
+position = Vector2(164, -46)
+polygon = PackedVector2Array(51, -31, 190, -31, 431, 49, -55, 51)
+
+[node name="Polygon2D" type="Polygon2D" parent="StaticBody2D5" unique_id=1803607074]
+position = Vector2(161, -55)
+scale = Vector2(2007, 205.5)
+texture = SubResource("PlaceholderTexture2D_gqv0l")
+polygon = PackedVector2Array(0.0269058, -0.111922, 0.09616342, -0.10705596, 0.21126059, 0.26277372, -0.0239163, 0.262774)
+uv = PackedVector2Array(0.0269058, -0.111922, 0.09616342, -0.10705596, 0.21126059, 0.26277372, -0.0239163, 0.262774)
+metadata/_edit_lock_ = true
+
 [node name="World Graph" parent="." unique_id=1493569359 instance=ExtResource("2_hru55")]
 visible = false
 position = Vector2(-493, -586)
