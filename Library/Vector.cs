@@ -1,6 +1,6 @@
 using Godot;
 
-public static class Library
+public static partial class Library
 {
     public static Vector2 Drag(this Vector2 value, float Coeff, double delta)
     {
@@ -14,4 +14,5 @@ public static class Library
         return value.Slide(normal).Normalized() * value.Length();
     }
 }
+
 

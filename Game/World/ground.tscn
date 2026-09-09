@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://dpj0u4y1xl2nm"]
+
+[ext_resource type="Script" uid="uid://dvc5mnlqtjqky" path="res://Game/World/Ground.cs" id="1_jty0r"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lfkyy"]
+size = Vector2(218, 215)
+
+[node name="Ground" type="StaticBody2D" unique_id=1077231116]
+script = ExtResource("1_jty0r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=231641189]
+position = Vector2(109, 110)
+shape = SubResource("RectangleShape2D_lfkyy")
+
+[node name="Polygon2D" type="Polygon2D" parent="CollisionShape2D" unique_id=1859209467]

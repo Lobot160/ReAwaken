@@ -91,7 +91,8 @@ public partial class Player : CharacterBody2D
 		Velocity = velocity.Drag(0.04f, delta);
 		if (MoveAndSlide())
 		{
-			Velocity = Velocity.Ramp(GetFloorNormal());
+			Velocity = Velocity.Slide(GetFloorNormal());
+			Velocity = Velocity.Drag(0.09f, delta);
 		}
 		
 	}
