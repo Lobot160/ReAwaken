@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://dvc5mnlqtjqky" path="res://Game/World/Ground.cs" id="6_bkhv4"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_gb88t"]
+rough = true
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_surd5"]
 
@@ -21,8 +22,9 @@ size = Vector2(96, 96)
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_gqv0l"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0wqet"]
-size = Vector2(351, 278)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k8do8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_awrha"]
 
 [node name="World" type="Node2D" unique_id=729054929]
 
@@ -86,8 +88,8 @@ position = Vector2(722, 0)
 physics_material_override = SubResource("PhysicsMaterial_gb88t")
 
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="StaticBody2D5" unique_id=755150673]
-position = Vector2(323.28513, -29.230118)
-polygon = PackedVector2Array(-110.285065, -48.769882, 30.71487, -47.769882, 271.71487, 32.230118, -214.28513, 34.230118)
+position = Vector2(326.99997, -29)
+polygon = PackedVector2Array(-110.285065, -48.769882, 30.71487, -47.769882, 312, -88, 400, -86, 549, -133, 637, -133, 487, -49, 527, -12, 271.71487, 32.230118, -214.28513, 34.230118)
 
 [node name="Polygon2D" type="Polygon2D" parent="StaticBody2D5" unique_id=1803607074]
 position = Vector2(161, -55)
@@ -117,13 +119,13 @@ position = Vector2(-899, 4)
 position = Vector2(-1055, 0)
 
 [node name="Ground" type="StaticBody2D" parent="." unique_id=1755960563 node_paths=PackedStringArray("collisionShape")]
-position = Vector2(1340, -10)
+position = Vector2(1621, -54)
 script = ExtResource("6_bkhv4")
-Shape = SubResource("RectangleShape2D_0wqet")
+Shape = SubResource("RectangleShape2D_k8do8")
 color = Color(0.7428552, 0.300888, 0.67524713, 1)
 collisionShape = NodePath("CollisionShape2D")
 metadata/_custom_type_script = "uid://dvc5mnlqtjqky"
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground" unique_id=1813096783]
-shape = SubResource("RectangleShape2D_0wqet")
+shape = SubResource("RectangleShape2D_awrha")

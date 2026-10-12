@@ -14,6 +14,15 @@ public partial class Player : CharacterBody2D
 	public Inventory ReservedUpgrades { get; } = new ("playerUpgrade", capacity: 10);
 
 
+
+	public double FloorFriction { get; set; } = 0.04;
+
+
+	//Helps stick to floor
+	private bool stick = true;
+	private float LastFloorAngle = 0f;
+	private float FloorSnapAngle = 30f;
+
 	public void updateStats()
 	{
 		foreach (var item in EquipedUpgrades)
@@ -55,8 +64,7 @@ public partial class Player : CharacterBody2D
 
 	public override void _PhysicsProcess(double delta)
 	{
-		//Helps stick to floor
-		bool stick = true;
+		
 
 		//copy of main Velocity
 		Vector2 velocity = Velocity;
@@ -66,6 +74,16 @@ public partial class Player : CharacterBody2D
 		float inputDir = Input.GetAxis("left", "right");
 		velocity.X +=  inputDir * acceleration * (float)delta;
 
+		if (IsOnFloor())
+		{
+			LastFloorAngle = GetFloorAngle();
+			stick = true;
+		}
+
+		if (stick && LastFloorAngle < Mathf.DegToRad(FloorSnapAngle))
+		{
+			ApplyFloorSnap();
+		}
 		
 		if (!IsOnFloor()) 
 		{
@@ -89,11 +107,15 @@ public partial class Player : CharacterBody2D
 		}
 
 		Velocity = velocity.Drag(0.04f, delta);
+
+
+		
+
 		if (MoveAndSlide())
 		{
 			Velocity = Velocity.Slide(GetFloorNormal());
-			Velocity = Velocity.Drag(0.09f, delta);
 		}
+		
 		
 	}
 	
