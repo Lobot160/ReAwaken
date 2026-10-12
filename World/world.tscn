@@ -4,15 +4,16 @@
 [ext_resource type="PackedScene" uid="uid://dyknaefs4lvek" path="res://World/world_graph.tscn" id="2_hru55"]
 [ext_resource type="Script" uid="uid://bbttobaigjgkg" path="res://World/loot_randomizer.gd" id="3_7ds07"]
 [ext_resource type="PackedScene" uid="uid://c1uaka66jg4dp" path="res://Game/chest.tscn" id="3_atil0"]
-[ext_resource type="PackedScene" uid="uid://dpj0u4y1xl2nm" path="res://Game/World/ground.tscn" id="5_k8do8"]
 [ext_resource type="Script" uid="uid://dvc5mnlqtjqky" path="res://Game/World/Ground.cs" id="6_bkhv4"]
-[ext_resource type="Shader" uid="uid://cf5tgp3pwswuy" path="res://World/ground.tres" id="6_yf0ba"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_gb88t"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_surd5"]
 
+[sub_resource type="Gradient" id="Gradient_ymxj6"]
+
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_k63t6"]
+gradient = SubResource("Gradient_ymxj6")
 width = 500
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kx0re"]
@@ -20,15 +21,8 @@ size = Vector2(96, 96)
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_gqv0l"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_bkhv4"]
-shader = ExtResource("6_yf0ba")
-
-[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_yf0ba"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_2mjw2"]
-shader = ExtResource("6_yf0ba")
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_lo5ox"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0wqet"]
+size = Vector2(351, 278)
 
 [node name="World" type="Node2D" unique_id=729054929]
 
@@ -41,7 +35,7 @@ physics_material_override = SubResource("PhysicsMaterial_gb88t")
 shape = SubResource("WorldBoundaryShape2D_surd5")
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=669316317]
-position = Vector2(-315.00003, 361)
+position = Vector2(-316.00003, 364)
 scale = Vector2(2007, 722.5)
 texture = SubResource("GradientTexture1D_k63t6")
 
@@ -122,20 +116,14 @@ position = Vector2(-899, 4)
 [node name="Chest4" parent="Chests" unique_id=1612785142 instance=ExtResource("3_atil0")]
 position = Vector2(-1055, 0)
 
-[node name="Ground" parent="." unique_id=1077231116 instance=ExtResource("5_k8do8")]
-material = SubResource("ShaderMaterial_bkhv4")
-shape = SubResource("ConvexPolygonShape2D_yf0ba")
-
-[node name="CollisionShape2D" parent="Ground" index="1" unique_id=231641189]
-material = SubResource("ShaderMaterial_2mjw2")
-position = Vector2(117, 25)
-shape = SubResource("ConvexPolygonShape2D_yf0ba")
-
-[node name="Ground2" type="StaticBody2D" parent="." unique_id=902699678]
-position = Vector2(561, -156)
+[node name="Ground" type="StaticBody2D" parent="." unique_id=1755960563 node_paths=PackedStringArray("collisionShape")]
+position = Vector2(1340, -10)
 script = ExtResource("6_bkhv4")
-shape = SubResource("RectangleShape2D_lo5ox")
-color = Color(0.44780797, 0.5132568, 0.5092112, 1)
+Shape = SubResource("RectangleShape2D_0wqet")
+color = Color(0.7428552, 0.300888, 0.67524713, 1)
+collisionShape = NodePath("CollisionShape2D")
 metadata/_custom_type_script = "uid://dvc5mnlqtjqky"
+metadata/_edit_group_ = true
 
-[editable path="Ground"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground" unique_id=1813096783]
+shape = SubResource("RectangleShape2D_0wqet")
