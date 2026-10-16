@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://bppyw4de6cob3"]
 
-[ext_resource type="PackedScene" uid="uid://p2if7elt77hk" path="res://World/background.tscn" id="1_ksg35"]
-[ext_resource type="PackedScene" uid="uid://dyknaefs4lvek" path="res://World/world_graph.tscn" id="2_hru55"]
-[ext_resource type="Script" uid="uid://bbttobaigjgkg" path="res://World/loot_randomizer.gd" id="3_7ds07"]
-[ext_resource type="PackedScene" uid="uid://c1uaka66jg4dp" path="res://Game/chest.tscn" id="3_atil0"]
-[ext_resource type="Script" uid="uid://dvc5mnlqtjqky" path="res://Game/World/Ground.cs" id="6_bkhv4"]
+[ext_resource type="PackedScene" uid="uid://p2if7elt77hk" path="res://Scenes/World/background.tscn" id="1_ksg35"]
+[ext_resource type="PackedScene" uid="uid://dyknaefs4lvek" path="res://Scenes/World/world_graph.tscn" id="2_hru55"]
+[ext_resource type="Script" uid="uid://cse2ha1us0txm" path="res://Scenes/World/loot_randomizer.gd" id="3_7ds07"]
+[ext_resource type="PackedScene" uid="uid://c1uaka66jg4dp" path="res://Assets/Objects/Chest/chest.tscn" id="3_atil0"]
+[ext_resource type="Script" uid="uid://dvc5mnlqtjqky" path="res://Assets/Materials/Ground.cs" id="6_bkhv4"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_gb88t"]
 rough = true
@@ -23,8 +23,6 @@ size = Vector2(96, 96)
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_gqv0l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k8do8"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_awrha"]
 
 [node name="World" type="Node2D" unique_id=729054929]
 
@@ -128,4 +126,4 @@ metadata/_custom_type_script = "uid://dvc5mnlqtjqky"
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground" unique_id=1813096783]
-shape = SubResource("RectangleShape2D_awrha")
+shape = SubResource("RectangleShape2D_k8do8")
