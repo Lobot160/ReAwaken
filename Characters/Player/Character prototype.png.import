@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ca2kvxwohp4mo"
-path="res://.godot/imported/Character proportunes.png-14ca5e4a08d78cc422f3adf684d6e61d.ctex"
+uid="uid://dat6irj75mfsc"
+path="res://.godot/imported/Character prototype.png-e8e418d95b605360963b56236fd3cd15.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Game/Character proportunes.png"
-dest_files=["res://.godot/imported/Character proportunes.png-14ca5e4a08d78cc422f3adf684d6e61d.ctex"]
+source_file="res://Characters/Player/Character prototype.png"
+dest_files=["res://.godot/imported/Character prototype.png-e8e418d95b605360963b56236fd3cd15.ctex"]
 
 [params]
 

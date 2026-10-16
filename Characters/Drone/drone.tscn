@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://spp2mi1ddrrs"]
+[gd_scene format=3 uid="uid://spp2mi1ddrrs"]
 
 [ext_resource type="Script" path="res://Game/drone.gd" id="1_318tv"]
 [ext_resource type="Texture2D" uid="uid://wr3ybve678lq" path="res://icon.svg" id="1_mbj3f"]

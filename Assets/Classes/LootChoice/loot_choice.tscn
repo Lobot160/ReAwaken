@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ddho0fu1yewn7"]
 
-[ext_resource type="Theme" uid="uid://drprxaxuy0ows" path="res://Themes/highlighted_panel.tres" id="1_o7umw"]
+[ext_resource type="Theme" path="res://Themes/highlighted_panel.tres" id="1_o7umw"]
 
 [node name="Loot Choice" type="CanvasLayer" unique_id=574781858]
 process_mode = 2
