@@ -4,7 +4,8 @@ public static partial class Library
 {
     public static Vector2 Drag(this Vector2 value, float Coeff, double delta)
     {
-        value.X -= value.X * Coeff;
+        value.X -= value.X * Coeff * (float)delta;
+        value.Y -= value.Y * Coeff * (float)delta;
         return value;
     }
 
