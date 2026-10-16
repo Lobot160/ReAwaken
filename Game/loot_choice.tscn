@@ -1,13 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://ddho0fu1yewn7"]
+[gd_scene format=3 uid="uid://ddho0fu1yewn7"]
 
-[ext_resource type="Script" path="res://Game/loot_choice.gd" id="1_i6j4l"]
 [ext_resource type="Theme" uid="uid://drprxaxuy0ows" path="res://Themes/highlighted_panel.tres" id="1_o7umw"]
 
-[node name="Loot Choice" type="CanvasLayer"]
+[node name="Loot Choice" type="CanvasLayer" unique_id=574781858]
 process_mode = 2
-script = ExtResource("1_i6j4l")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=89728903]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -18,17 +16,17 @@ size_flags_vertical = 3
 theme_override_constants/margin_top = 100
 theme_override_constants/margin_bottom = 150
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=1434396857]
 layout_mode = 2
 theme_override_constants/separation = 20
 alignment = 1
 
-[node name="Panel" type="Panel" parent="MarginContainer/HBoxContainer"]
+[node name="Panel" type="Panel" parent="MarginContainer/HBoxContainer" unique_id=1494870397]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 theme = ExtResource("1_o7umw")
 
-[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/Panel"]
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/Panel" unique_id=1120490602]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -39,11 +37,11 @@ offset_bottom = 23.0
 grow_horizontal = 2
 text = "Choice 1"
 
-[node name="Panel2" type="Panel" parent="MarginContainer/HBoxContainer"]
+[node name="Panel2" type="Panel" parent="MarginContainer/HBoxContainer" unique_id=506021903]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 
-[node name="Label2" type="Label" parent="MarginContainer/HBoxContainer/Panel2"]
+[node name="Label2" type="Label" parent="MarginContainer/HBoxContainer/Panel2" unique_id=1625892429]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -54,11 +52,11 @@ offset_bottom = 23.0
 grow_horizontal = 2
 text = "Choice 2"
 
-[node name="Panel3" type="Panel" parent="MarginContainer/HBoxContainer"]
+[node name="Panel3" type="Panel" parent="MarginContainer/HBoxContainer" unique_id=1587075511]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 
-[node name="Label3" type="Label" parent="MarginContainer/HBoxContainer/Panel3"]
+[node name="Label3" type="Label" parent="MarginContainer/HBoxContainer/Panel3" unique_id=1345475896]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5

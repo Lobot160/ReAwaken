@@ -1,0 +1,32 @@
+{
+	"playerUpgrade" : 
+		{
+		"basicHealth" : {
+			"name" : "Health",
+			"energyCost" : 25,
+			"values" : {
+				"maxHealth" : 100,
+				"healthRegen" : 10
+			}
+		},
+		"basicSpeed" : {
+			"name" : "Speed",
+			"energyCost" : 25,
+			"values" : {
+				"speed" : 200,
+				"acceleration" : 400
+			}
+		},
+		"basicJump" : {
+			"name" : "Jump",
+			"energyCost" : 25,
+			"values" : {
+				"jumpPower" : 200
+			}
+		}
+	},
+	"drone" : {
+		
+	}
+	
+}
