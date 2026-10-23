@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bppyw4de6cob3" path="res://Scenes/World/world.tscn" id="2_1qprs"]
 [ext_resource type="PackedScene" uid="uid://cqsc41cb3whtf" path="res://Assets/Themes/ui.tscn" id="3_7x28n"]
 [ext_resource type="PackedScene" uid="uid://spp2mi1ddrrs" path="res://Characters/Drone/drone.tscn" id="4_7dejl"]
+[ext_resource type="Script" uid="uid://b0won1048nhp6" path="res://Characters/Drone/drone.gd" id="5_lquwl"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_q7vy2"]
 vertices = PackedVector2Array(4938.93, -1580.89, 5154.98, 650.977, 1447.23, 556.391, 1254, 464, 1254, 348, -1716.84, -1505.11, 1138, 348, -1684.14, 639.008, 1138, 464, 970, 542.25, 970, 643.656, 1086, 542.25, 1329.25, 644.281, 1086, 643.859, 1461.52, 644.508)
@@ -27,3 +28,4 @@ position = Vector2(865, 650)
 
 [node name="Drone" parent="NavigationRegion2D" unique_id=689952971 instance=ExtResource("4_7dejl")]
 position = Vector2(787, 539)
+script = ExtResource("5_lquwl")

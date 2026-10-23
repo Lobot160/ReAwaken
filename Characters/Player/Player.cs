@@ -6,11 +6,8 @@ using static Library;
 
 using static IHealth;
 
-public partial class Player : CharacterBody2D, IHealth
+public partial class Player : Character, IHealth
 {
-	public float speed, jumpPower, acceleration;
-
-	public Vector2 movementVelocity = Vector2.Zero;
 
 	public Inventory EquipedUpgrades { get; } = new ("playerUpgrade", energyLimit: 1000);
 	public Inventory ReservedUpgrades { get; } = new ("playerUpgrade", capacity: 10);
@@ -71,15 +68,12 @@ public partial class Player : CharacterBody2D, IHealth
 
 	public override void _PhysicsProcess(double delta)
 	{
-		
-
-		//copy of main Velocity
-		Vector2 velocity = Velocity;
 
 		
 
-		float inputDir = Input.GetAxis("left", "right");
-		velocity.X +=  inputDir * acceleration * (float)delta;
+		Vector2 inputDir = new (Input.GetAxis("left", "right"), 0);
+
+		ApplyMovement(inputDir, delta);
 
 		if (IsOnFloor())
 		{
@@ -91,20 +85,12 @@ public partial class Player : CharacterBody2D, IHealth
 		{
 			ApplyFloorSnap();
 		}
-		
-		if (!IsOnFloor()) 
-		{
-			velocity += GetGravity() * (float)delta;
-			stick = false;
-		}
-
 
 
 		// Handle Jump.
-		if (Input.IsActionJustPressed("jump") && CanJump())
+		if (Input.IsActionJustPressed("jump") && CanJump)
 		{
-			velocity.Y = -jumpPower;
-			stick = false;
+			ApplyJump();
 		}
 
 		if (Input.IsActionJustPressed("debug"))
@@ -112,25 +98,12 @@ public partial class Player : CharacterBody2D, IHealth
 			//Insert breakpoint here
 			GD.Print("Debug action pressed");
 		}
-
-		Velocity = velocity.Drag(0.04f, delta);
-
-
 		
 
-		if (MoveAndSlide())
-		{
-			Velocity = Velocity.Slide(GetFloorNormal());
-		}
-		
-		
+		base._PhysicsProcess(delta);
 	}
 	
-	public bool CanJump()
-	{
-		//Able to add multiple flags for jumping
-		return IsOnFloor();
-	}
+	
 
     public void TakeDamage(Damage amount)
     {

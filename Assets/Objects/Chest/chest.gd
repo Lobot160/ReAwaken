@@ -8,7 +8,7 @@ var target = 0
 var loot = ["Loot A", "Loot B", "Loot C"]
 
 @onready var input_label: Label = $"Input Label"
-const LOOT_CHOICE = preload("res://Game/loot_choice.tscn")
+const LOOT_CHOICE = preload("res://Assets/Classes/LootChoice/loot_choice.tscn")
 
 
 # Called when the node enters the scene tree for the first time.
