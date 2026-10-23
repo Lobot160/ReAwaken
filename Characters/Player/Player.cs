@@ -4,7 +4,9 @@ using System.Reflection;
 using System.Text.Json;
 using static Library;
 
-public partial class Player : CharacterBody2D
+using static IHealth;
+
+public partial class Player : CharacterBody2D, IHealth
 {
 	public float speed, jumpPower, acceleration;
 
@@ -17,9 +19,14 @@ public partial class Player : CharacterBody2D
 
 	public double FloorFriction { get; set; } = 0.04;
 
+    public float Health {get; private set;}
+    public float MaxHealth {get; private set;}
 
-	//Helps stick to floor
-	private bool stick = true;
+    public bool IsDead {get; private set;} = false;
+
+
+    //Helps stick to floor
+    private bool stick = true;
 	private float LastFloorAngle = 0f;
 	private float FloorSnapAngle = 30f;
 
@@ -119,10 +126,25 @@ public partial class Player : CharacterBody2D
 		
 	}
 	
-
 	public bool CanJump()
 	{
 		//Able to add multiple flags for jumping
 		return IsOnFloor();
 	}
+
+    public void TakeDamage(Damage amount)
+    {
+        Health -= amount.Total;
+    }
+
+    public void Heal(float amount)
+    {
+		
+        Health += amount;
+    }
+
+    public void OnDeath()
+    {
+        throw new NotImplementedException();
+    }
 }
